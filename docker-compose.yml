@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  minecraft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/home/
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    user: "${SUDO_UID:-$UID}:${SUDO_GID:-$GID}"
+    ports:
+      - "19132:19132/udp"
+    stdin_open: true
+    tty: true

@@ -1,0 +1,4 @@
+/.vscode/
+/worlds/
+*.json
+server.properties
